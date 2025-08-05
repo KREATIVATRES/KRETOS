@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Logo KRE∆TIV∆TRĒS Animado</title>
+  <style>
+    body,html { margin:0; width:100%; height:100%; background:#0A0A0A; display:flex; align-items:center; justify-content:center; }
+    svg { width:250px; height:250px; overflow:visible; }
+
+    /* KRETOS triángulo metal-dorado con glow de fuego */
+    .tri-kretos { fill:none; stroke:#FFD700; stroke-width:6;
+      filter: drop-shadow(0 0 8px #FF8C00);
+      animation: fireGlow 2s ease-in-out infinite alternate;
+    }
+    @keyframes fireGlow {
+      from { filter: drop-shadow(0 0 4px #FFA500) hue-rotate(0deg); }
+      to   { filter: drop-shadow(0 0 12px #FF4500) hue-rotate(20deg); }
+    }
+
+    /* TRĒS•ia triángulo invertido cian */
+    .tri-tresia { fill:none; stroke:#00FFFF; stroke-width:5;
+      opacity:0;
+      animation: popTres 0.5s 1.2s forwards ease-out;
+    }
+    @keyframes popTres {
+      from { opacity:0; transform: scale(0.3); }
+      to   { opacity:1; transform: scale(1); }
+    }
+
+    /* Órbita magenta */
+    .orbit { fill:none; stroke:#FF00FF; stroke-width:3; opacity:0.6;
+      transform-origin:50% 50%;
+      animation: rotateOrbit 6s linear infinite;
+    }
+    @keyframes rotateOrbit {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Esfera-luna pulso */
+    .luna { fill:#0A0F1D; stroke:#00FFFF; stroke-width:4;
+      transform-origin:50% 50%;
+      animation: pulseLuna 2s ease-in-out infinite;
+    }
+    @keyframes pulseLuna {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  </style>
+</head>
+<body>
+
+<svg viewBox="0 0 200 200">
+  <!-- Triángulo de KRETOS -->
+  <polygon class="tri-kretos"
+    points="100,10 190,170 10,170"/>
+  <!-- Órbita -->
+  <circle class="orbit" cx="100" cy="100" r="60"/>
+  <!-- Esfera-luna -->
+  <circle class="luna" cx="160" cy="60" r="12"/>
+  <!-- Triángulo invertido TRĒS•ia -->
+  <polygon class="tri-tresia"
+    points="160,46 172,74 148,74"/>
+</svg>
+
+</body>
+</html>
